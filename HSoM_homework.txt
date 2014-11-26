@@ -24,13 +24,13 @@ simple(a-b)ab ==> a^2 - b^2
 
 Exercise 1.3
 Identify the well-typed expressions in the following, and, for each, give its proper type:
-  [A,B,C]				            :: [PitchClass]
-  [D,42]				            :: [PitchClass, Integer]
-  (-42, Ef)		            	:: (Integer, PitchClass]
-  [('a',3),('b',5)]		      :: [(Char,Integer)]
-  simple 'a' 'b' 'c'	    	:: Char ->  Char ->  Char ->  Integer (?)
-  (simple 1,2,3 simple)		  :: Integer -> Integer -> Integer -> Integer -> Integer (?)
-  ["I","love","Euterpea"]		:: [String]
+  [A,B,C]					:: [PitchClass]
+  [D,42]					:: [PitchClass, Integer]
+  (-42, Ef)					:: (Integer, PitchClass]
+  [('a',3),('b',5)]			:: [(Char,Integer)]
+  simple 'a' 'b' 'c'		:: Char ->  Char ->  Char ->  Integer (?)
+  (simple 1,2,3 simple)		:: Integer -> Integer -> Integer -> Integer -> Integer (?)
+  ["I","love","Euterpea"]	:: [String]
 
 Functional Abstraction
   x::Float
@@ -39,17 +39,17 @@ Functional Abstraction
   area = pi*r**2
   x = f area + g area
 
-  x = let area = pi*r**2				-- inner scoping
+  x = let area = pi*r**2			-- inner scoping
 	  in f area + g area
 
   x = let areaF r = pi*r**2			-- variable quantity
 	  in f(areaF r1) + g(areaF r2)
 
 Lists
-  C:[D,Ef]	-- equivalent
+  C:[D,Ef]		-- equivalent
   [C,D,Ef]
   C:(D:(Ef:[]))
-  C:D:Ef:[]	-- infix operator (:) is right associative
+  C:D:Ef:[]		-- infix operator (:) is right associative
 
 Exercise 1.4 
 Modify the definitions of hNote and hList so that they each
