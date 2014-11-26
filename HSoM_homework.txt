@@ -1,0 +1,69 @@
+Exercise 1.1
+Write out all of the steps in the calculation of the value of
+simple(simple234)56
+  => {expression (definition) from text}
+  simple a b c = a*(b+c)
+  => {unfold}
+  simple(2*(3+4))56
+  => {evaluate}
+  simple 14 5 6
+  => {unfold}
+  14*(5+6)
+  => {evaluate}
+  14*(11)
+  154
+
+Exercise 1.2
+Prove by calculation that
+simple(a-b)ab ==> a^2 - b^2
+  => {unfold}
+  (a-b)(a+b) ==> a^2 - b^2
+  => {distributive}
+  a^2+ab-ab-b^2 ==> a^2 - b^2
+  a^2 - b^2 ==> a^2 - b^2
+
+Exercise 1.3
+Identify the well-typed expressions in the following, and, for each, give its proper type:
+  [A,B,C]				            :: [PitchClass]
+  [D,42]				            :: [PitchClass, Integer]
+  (-42, Ef)		            	:: (Integer, PitchClass]
+  [('a',3),('b',5)]		      :: [(Char,Integer)]
+  simple 'a' 'b' 'c'	    	:: Char ->  Char ->  Char ->  Integer (?)
+  (simple 1,2,3 simple)		  :: Integer -> Integer -> Integer -> Integer -> Integer (?)
+  ["I","love","Euterpea"]		:: [String]
+
+Functional Abstraction
+  x::Float
+  x = f(pi*r1**2)+g(pi*r2**2)
+
+  area = pi*r**2
+  x = f area + g area
+
+  x = let area = pi*r**2				-- inner scoping
+	  in f area + g area
+
+  x = let areaF r = pi*r**2			-- variable quantity
+	  in f(areaF r1) + g(areaF r2)
+
+Lists
+  C:[D,Ef]	-- equivalent
+  [C,D,Ef]
+  C:(D:(Ef:[]))
+  C:D:Ef:[]	-- infix operator (:) is right associative
+
+Exercise 1.4 
+Modify the definitions of hNote and hList so that they each
+take an extra argument that specifies the interval of harmonization (rather
+than being fixed at -3). Rewrite the definition of mel to take these changes
+into account.
+
+  hNote	:: Dur -> Pitch -> Music Pitch
+  hNode d p = note dp :=: node d (trans(-3)p)	-- transpose at -3 
+  hNode d p i = note dp :=: node d (trans(i)p)	-- interval of harmonization specified by i
+
+  hList		:: Dur -> [Pitch] -> Music
+  hlist d[]	= rest 0
+  hList d(p:ps)	= hNote d p   :+: hList d ps	-- recursive
+  hList d(p:ps)	= hNote d p i :+: hList d ps	-- modified to account for interval of harmonization
+
+(last page 22 - 1.8)
