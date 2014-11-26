@@ -57,8 +57,10 @@ take an extra argument that specifies the interval of harmonization (rather
 than being fixed at -3). Rewrite the definition of mel to take these changes
 into account.
 
-  hNote	:: Dur -> Pitch -> Music Pitch
+  hNote	:: Dur -> Pitch -> Music Pitch 			-- without interval
   hNode d p = note dp :=: node d (trans(-3)p)	-- transpose at -3 
+
+  hNote	:: Dur -> Pitch -> Interval -> Music Pitch
   hNode d p i = note dp :=: node d (trans(i)p)	-- interval of harmonization specified by i
 
   hList		:: Dur -> [Pitch] -> Music
