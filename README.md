@@ -6,5 +6,5 @@ Simple programs to start.
 
 [Haskell School of Music]:http://haskell.cs.yale.edu/euterpea/haskell-school-of-music/
 [PDF]:http://haskell.cs.yale.edu/wp-content/uploads/2014/04/HSoM1.pdf
-[Euterpea]:https://github.com/Euterpea/Euterpae
+[Euterpea]:https://github.com/Euterpea/Euterpea
 [Haskell]:https://www.haskell.org/haskellwiki/Introduction
