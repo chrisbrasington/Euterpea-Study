@@ -68,4 +68,23 @@ into account.
   hList d(p:ps)	= hNote d p   :+: hList d ps	-- recursive
   hList d(p:ps)	= hNote d p i :+: hList d ps	-- modified to account for interval of harmonization
 
-(last page 22 - 1.8)
+Notes 1.8 - Haskell Equality vs. Euterpean Equality
+
+  m1 :+: m2 represents playing of m1 followed by m2
+  m1 :=: m2 represents playing of m1 and m2 simultaneously
+
+  Melodies which sound the same (musically equivalent) need not be computationally equal (equal in Haskell). 
+
+  Polyphonic:
+  mel1 = (note(1/4)(Ef,4) :=: note(1/4)(C,4)) :+:
+         (note(1/4)(F,4)  :=: note(1/4)(D,4)) :+:
+         (note(1/4)(G,4)  :=: note(1/4)(E,4))
+
+  Contrapuntal interpretation:
+  mel2 = (note(1/4)(Ef,4) :+: note(1/4)(F,4) :+: note(1/4)(G,4)) 
+         :=:
+         (note(1/4)(C,4) :+: note(1/4)(D,4) :+: note(1/4)(E,4))
+
+  These melodies are not equal, yet will sound the same. 
+
+
