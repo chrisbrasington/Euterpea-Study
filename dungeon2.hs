@@ -1,5 +1,8 @@
 import Euterpea
 
+-- tempo
+t = (3/2)
+
 mel1a :: Music Pitch
 mel1a = let 
           first = a 3 qn :+: c 4 qn :+: f 4 dwn 
@@ -19,10 +22,13 @@ mel2b = let
        in first :+: second 
 
 melody = 
-    (mel1a :=: mel2a) :+: (mel1a :=: mel2b)
+    ((mel1a :=: mel2a) :+: (mel1a :=: mel2b))
 
 -- play the melody twice
 main = play 
   (
+  tempo(t)
+    (
     melody :+: melody
+    )
   )
