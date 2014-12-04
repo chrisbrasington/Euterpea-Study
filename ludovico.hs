@@ -12,5 +12,8 @@ mel1 = let
 main = play 
   (
     instrument Cello
-    (mel1 :+: mel1)
+    (
+      (mel1 :+: mel1) :+:
+      (mel1 :+: mel1)
+    )
   )

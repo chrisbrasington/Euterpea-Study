@@ -29,6 +29,9 @@ main = play
   (
   tempo(t)
     (
-    melody :+: melody
+      instrument Cello
+      (
+        melody :+: melody :+: melody :+: melody
+      )
     )
   )
