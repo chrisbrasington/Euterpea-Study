@@ -19,4 +19,8 @@ mel2 = let
        in first :+: first :+: first :+: first
           :+: second :+: third :+: second :+: third
 
-main = play (mel1 :+: mel1 :+: mel2 :+: mel2)
+main = play 
+  (
+    instrument AcousticGrandPiano
+    (mel1 :+: mel1 :+: mel2 :+: mel2)
+  )
